@@ -1,0 +1,33 @@
+<p>car works!</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Model</th>
+      <th>Make</th>
+      <th>Year</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Active</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of list$ | async">
+      <td>{{ row.id }}</td>
+      <td>{{ row.model }}</td>
+      <td>{{ row.make }}</td>
+      <td>{{ row.year }}</td>
+      <td>{{ row.price }}</td>
+      <td>{{ row.stock }}</td>
+      <td>{{ row.active }}</td>
+      <td>
+        <div class="btn-group">
+          <button [routerLink]="['/', 'car', 'edit', '44']" class="btn btn-info">
+            <i class="fa fa-pencil"> Edit</i>
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
